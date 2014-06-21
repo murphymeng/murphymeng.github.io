@@ -70,9 +70,12 @@ ul.posts span {
 
 .site .header h1.title {
   display: inline-block;
-  margin-bottom: 10px;
   font-size: 24px;
   font-family: 微软雅黑
+}
+
+.site .mf-nav {
+  margin-top: 20px;
 }
 
 .site .header h1.title a {
