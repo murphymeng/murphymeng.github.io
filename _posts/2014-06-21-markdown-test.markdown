@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "测试markdown"
 date:   2014-06-21 14:13:23
+comments: true
 categories: jekyll update
 ---
 
