@@ -27,6 +27,7 @@ var mf = function() {
 
 <br />
 <br />
+<div style="height: 30px"></div>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
