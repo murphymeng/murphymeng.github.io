@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "测试markdown"
-date:   2014-06-21 14:13:23
-categories: jekyll update
+date:   2014-06-21 18:13:23
+categories: test
 ---
 
 ###mf
