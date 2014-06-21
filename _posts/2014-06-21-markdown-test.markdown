@@ -25,6 +25,9 @@ var mf = function() {
 }
 {% endhighlight %}
 
+<br />
+<br />
+
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
