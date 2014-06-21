@@ -58,7 +58,7 @@ ul.posts span {
 .site {
   font-size: 115%;
   text-align: justify;
-  width: 960px;
+  width: 52em;
   margin: 3em auto 2em;
   line-height: 1.5em;
 }
@@ -71,6 +71,8 @@ ul.posts span {
 .site .header h1.title {
   display: inline-block;
   margin-bottom: 2em;
+  font-size: 24px;
+  font-family: 微软雅黑
 }
 
 .site .header h1.title a {
