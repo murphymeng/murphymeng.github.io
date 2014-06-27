@@ -14,14 +14,31 @@ categories: test
 var obj = {a:1};
 obj.__proto__ // Object {}
 obj.__proto__ === Object.prototype) // true
+Object.prototype.__proto__ 
 {% endhighlight %}
 
-这里的obj是一个普通的通过对象字面量创建的对象，它的原型属性可以看到就是Object这个对象构造函数的prototype属性。注意这里的prototype属性并不是获取自己原型的一个属性, 那为什么Object会有这个属性呢？事实上，所有的函数都会具有一个prototype属性，并且这个属性等于Function.protoype
+这里的obj是一个普通的通过对象字面量创建的对象，它的原型属性可以看到就是Object这个对象构造函数的prototype属性。注意这里的prototype属性并不是获取自己原型的一个属性, 那为什么Object会有这个属性呢？事实上，所有的函数都会具有一个prototype属性，当这个函数作为一个构造函数通过new关键词创建时使用。
 
 {% highlight javascript %}
-function f() {};
-f.prototype 
+function Person() {};
+var jack = new Person();
+jack.__proto__ === Person.prototype // true
 {% endhighlight %}
+
+这样一来所有通过Person创建出的对象可以继承和公用Person.prototype的属性和方法, js实现“类”继承也是基于这个。
+
+{% highlight javascript %}
+Person.prototype.say  = function() {console.log('我是人')};
+var mike = new Person();
+mike.say === jack.say // true
+{% endhighlight %}
+
+我们再来看下下面的结果
+{% highlight javascript %}
+Function.prototype //
+{% endhighlight %}
+
+
 
 
 <div style="height: 30px"></div>
