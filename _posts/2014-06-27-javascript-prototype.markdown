@@ -2,42 +2,58 @@
 layout: post
 title:  "Javascript prototype详解"
 date:   2014-06-27 18:13:23
-categories: test
+categories: javascript
 ---
 
 
-
-
-众所周知，javascript是一门基于原型的语言。所有js的对象都具有prototype属性，一个对象的prototype可以通过内部的[[prototype]]属性来获得，在chrome, firefox上可以通过__proto__属性来获取这个引用。
+众所周知，javascript是一门基于原型的语言。所有js的对象都具有prototype属性，一个对象的prototype可以通过内部的[[prototype]]属性来获得，在chrome, firefox上可以通过\_\_proto__属性来获取这个引用。首先我们看一下js对象字面量的原型，
 
 {% highlight javascript %}
 var obj = {a:1};
 obj.__proto__ // Object {}
-obj.__proto__ === Object.prototype) // true
-Object.prototype.__proto__ 
+obj.__proto__ === Object.prototype // true
 {% endhighlight %}
 
-这里的obj是一个普通的通过对象字面量创建的对象，它的原型属性可以看到就是Object这个对象构造函数的prototype属性。注意这里的prototype属性并不是获取自己原型的一个属性, 那为什么Object会有这个属性呢？事实上，所有的函数都会具有一个prototype属性，当这个函数作为一个构造函数通过new关键词创建时使用。
+这里的obj是一个普通的通过对象字面量创建的对象，它的原型属性可以看到就是Object的prototype。注意这里的prototype和\_\_proto__不是一个概念, 那为什么Object会有这个属性呢？
+
+在ECMA-262中中写道：
+>A prototype property is automatically created for every function, to provide for the possibility that the function will be used as a constructor.
+
+因为Object实际就是对象的构造函数，所以自然也会有prototype属性。那这个prototype属性的值是啥？
 
 {% highlight javascript %}
+Object.prototype // Object{}
+{% endhighlight %}
+查看MDN关于它的描述是：
+>The Object.prototype property represents the Object prototype object.
+Object的原型属性就是Object的原型对象(感觉说了等于没说)。
+
+再来看下Function的prototype:
+{% highlight javascript %}
+Function.prototype // function Empty() {}
+{% endhighlight %}
+Function的prototype是一个函数对象，由于我是在chrome的下输出的，Empty只是V8环境中特有命名，ECMA-262并没有明确规范函数对象的原型命名，如果你运行这个函数得到的返回值会是undefined。
+
+同样地，一些其他的js内置构造函数的prototype也都是自身的对象，譬如Array.prototype是Array对象，Number.prototype是Number对象。
+
+当我们使用new关键字加函数型的形式创建一个对象的时候，被创建出的对象的原型就是这个函数的prototype属性。
+
+{% highlight javascript %}
+
+var arr = new Array();
+arr.__proto__ === Array.prototype // true
+
+var f = new Function() {}; // 相当于function f() {};
+f.__proto__ === Function.prototype // true
+
 function Person() {};
-var jack = new Person();
-jack.__proto__ === Person.prototype // true
+var p1 = new Person(),
+    p2 = new Person();
+p1.__proto__ === Person.prototype // true
+p1.__proto__ === p2.__proto__ // true
 {% endhighlight %}
 
-这样一来所有通过Person创建出的对象可以继承和公用Person.prototype的属性和方法, js实现“类”继承也是基于这个。
-
-{% highlight javascript %}
-Person.prototype.say  = function() {console.log('我是人')};
-var mike = new Person();
-mike.say === jack.say // true
-{% endhighlight %}
-
-我们再来看下下面的结果
-{% highlight javascript %}
-Function.prototype //
-{% endhighlight %}
-
+通过Person函数创建出的对象可以继承和公用Person.prototype的属性和方法, js实现类和继承也是基于这个，关于这个话题这里就不展开了。
 
 
 
