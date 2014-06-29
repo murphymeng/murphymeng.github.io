@@ -137,6 +137,7 @@ ul.posts span {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 10px;
+  font-family: Bitstream Vera Sans Mono；
 }
 
 .post ul, .post ol {
@@ -147,6 +148,7 @@ ul.posts span {
   border: 1px solid #ddd;
   background-color: #eef;
   font-size: 1.2em;
+  font-family: 
 }
 
 .post pre code {
