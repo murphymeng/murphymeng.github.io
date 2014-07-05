@@ -7,7 +7,7 @@ categories: javascript
 
 Javascript在ES6之前都不支持类似java和其他一些面向对象语言中直接用class关键字来声明类的方式。js中通常遇到最多的是通过new关键字加构造器函数的方式来创建对象，因此可以将构造器的函数名看作类名。
 
-##1. 构造器函数##
+###1. 构造器函数###
 
 {% highlight javascript %}
 function Cat(name) {
