@@ -7,27 +7,59 @@ categories: javascript
 
 Javascript在ES6之前都不支持类似java和其他一些面向对象语言中直接用class关键字来声明类的方式。js中通常遇到最多的是通过new关键字加构造器函数的方式来创建对象，因此可以将构造器的函数名看作类名。
 
+1. 构造器函数
+
 {% highlight javascript %}
-function Cat() {
+function Cat(name) {
+    this.name = name;
     this.type = '猫科';
     this.say = function() {
         console.log("喵喵");
     }
 }
-var cat1 = new Cat();
+var cat1 = new Cat('小花'),
+    cat2 = new Cat('大花');
+cat1.name;  //大花
 cat1.type;  //猫科
+cat2.type;  //猫科
+cat1.type === cat2.type // false
 cat1.say(); //喵喵
 {% endhighlight %}
 
 这里的Cat就是cat1的构造函数，构造函数和一般的函数没有区别，首字母大写算是一种约定，表明它应该用当作构造函数来使用。你一定会好奇new加上函数到底做了什么，查看MDN可以看到。
 
->When the code new foo(...) is executed, the following things happen:
+>当 new Cat(...) 被执行时，JS会执行以下几件事:
 
->A new object is created, inheriting from foo.prototype.
-The constructor function foo is called with the specified arguments and this bound to the newly created object. new foo is equivalent to new foo(), i.e. if no argument list is specified, foo is called without arguments.
-The object returned by the constructor function becomes the result of the whole new expression. If the constructor function doesn't explicitly return an object, the object created in step 1 is used instead. (Normally constructors don't return a value, but they can choose to do so if they want to override the normal object creation process.)
+>1. 一个新的对象被创建，继承自Cat.prototype.
+>2. 构造器函数通过参数调用并且绑定到新创建的对象上，new Cat等同于new Cat()。
+>3. 这个被创建的对象会自动作为这个表达式的返回值，前提是如果构造器函数没有显示的return一个对象。(通常构造函数不会显示返回一个值，除非有特别的原因)。
 
+但是这样的类有一个问题，就是每一个通过Cat创建的对象都会有一个自己的type和say属性，占用了不同的内存，显然是一种浪费，因此对于共用的属性和方法我们可以把它们定义在Cat的prototype中。
 
+{% highlight javascript %}
+// 重新定义Cat构造函数
+function Cat(name) {
+    this.name = name;
+}
+Cat.prototype.type = '猫科';
+Cat.prototype.say = function() {
+    console.log("喵喵");
+}
+var cat1 = new Cat('小花'),
+    cat2 = new Cat('大花');
+
+cat1.type === cat2.type // true
+cat1.say  === cat2.say  // true
+{% endhighlight %}
+
+根据原型链的规则，访问cat1和cat2的type属性时，判断到他们自身没有，则去他们的原型对象Cat.prototype中查找。这样就做到了共用type和say属性。
+
+2. 对象的继承
+说完了对象再来看下js中是如何实现继承的。假设我现在想实现一个新的类，叫就白猫吧，我想让它继承Cat的所有属性和方法。
+
+{% highlight javascript %}
+this
+{% endhighlight %}
 
 
 <div style="height: 30px"></div>
