@@ -23,7 +23,7 @@ cat1.say(); //喵喵
 
 >When the code new foo(...) is executed, the following things happen:
 
-A new object is created, inheriting from foo.prototype.
+>A new object is created, inheriting from foo.prototype.
 The constructor function foo is called with the specified arguments and this bound to the newly created object. new foo is equivalent to new foo(), i.e. if no argument list is specified, foo is called without arguments.
 The object returned by the constructor function becomes the result of the whole new expression. If the constructor function doesn't explicitly return an object, the object created in step 1 is used instead. (Normally constructors don't return a value, but they can choose to do so if they want to override the normal object creation process.)
 
