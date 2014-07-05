@@ -7,7 +7,7 @@ categories: javascript
 
 Javascript在ES6之前都不支持类似java和其他一些面向对象语言中直接用class关键字来声明类的方式。js中通常遇到最多的是通过new关键字加构造器函数的方式来创建对象，因此可以将构造器的函数名看作类名。
 
-1. 构造器函数
+##1. 构造器函数##
 
 {% highlight javascript %}
 function Cat(name) {
@@ -54,7 +54,7 @@ cat1.say  === cat2.say  // true
 
 根据原型链的规则，访问cat1和cat2的type属性时，判断到他们自身没有，则去他们的原型对象Cat.prototype中查找。这样就做到了共用type和say属性。
 
-2. 对象的继承
+##2. 对象的继承##
 说完了对象再来看下js中是如何实现继承的。假设我现在想实现一个新的类，叫就白猫吧，我想让它继承Cat的所有属性和方法。
 
 {% highlight javascript %}
