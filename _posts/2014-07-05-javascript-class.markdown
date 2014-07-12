@@ -103,19 +103,19 @@ Student.prototype.constructor = Student;
 <div style="height: 30px"></div>
 
 <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2014-07-05-javascript-class" data-title="JavaScript class实现" data-url="http://murphy58.com/javascript/2014/07/05/javascript-class.html"></div>
+<div class="ds-thread" data-thread-key="2014-07-05-javascript-class" data-title="JavaScript class实现" data-url="http://murphy58.com/javascript/2014/07/05/javascript-class.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"murphy58"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
 <!-- 多说公共JS代码 end -->
 
