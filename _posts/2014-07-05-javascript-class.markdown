@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Javascript class实现"
+title:  "JavaScript class实现"
 date:   2014-07-05
-categories: javascript
+categories: javaScript
 ---
 
 Javascript在ES6之前都不支持类似java和其他一些面向对象语言中直接用class关键字来声明类的方式。js中通常遇到最多的是通过new关键字加构造器函数的方式来创建对象，因此可以将构造器的函数名看作类名。
@@ -103,7 +103,7 @@ Student.prototype.constructor = Student;
 <div style="height: 30px"></div>
 
 <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+    <div class="ds-thread" data-thread-key="2014-07-05-javascript-class" data-title="JavaScript class实现" data-url="http://murphy58.com/javascript/2014/07/05/javascript-class.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
