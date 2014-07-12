@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "JavaScript class实现"
+title:  "Javascript class实现"
 date:   2014-07-05
 categories: javaScript
 ---
