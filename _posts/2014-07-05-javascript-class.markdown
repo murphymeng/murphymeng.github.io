@@ -85,8 +85,7 @@ Student.prototype = Person.prototype;
 Student.prototype.constructor = Student;
 {% endhighlight %}
 
-等等!这样一来Person.prototype.constructor是不是也被改变了？的确，显然这样继承方式还需要改进，
-因此可以写成这样：
+但是这样一来改变Student.prototype对应Person.prototype也被改变了，显然这样继承方式是错误的，因此可以写成这样：
 
 {% highlight javascript %}
 //额外创建一个Person对象来作为Student的原型，这样修改Student.prototype.constructor也不会影响到Person的constrcutor了。
