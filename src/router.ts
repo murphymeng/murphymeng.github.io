@@ -21,7 +21,7 @@ const routes = [
 
 // 创建 router 实例
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 })
 
