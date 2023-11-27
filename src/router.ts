@@ -1,5 +1,5 @@
 // router.js 或 router.ts 
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/views/home.vue'
 import AddHabit from '@/views/add-habit.vue'
 import HabbitList from '@/views/habit-list.vue'
@@ -21,7 +21,7 @@ const routes = [
 
 // 创建 router 实例
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 })
 
